@@ -8,17 +8,7 @@ substitutions:
   ssid: Foobar
   networkkey: ThisIsAlsoABadIdea
 
-ota:
-  password: ${otapassword}
-
-api:
-
-wifi:
-  ssid: ${ssid}
-  password: ${networkkey}
-
-web_server:
-  port: 80
+<<: !include common.yaml
 
 debug:
 
