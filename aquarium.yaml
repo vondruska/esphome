@@ -20,10 +20,20 @@ wifi:
 web_server:
   port: 80
 
+debug:
+
+logger:
+  level: debug
+
 dallas:
   - pin: 13
 
 sensor:
   - platform: dallas
-    address: 0x2866eb950b000064
+    index: 0
+    # address: 0x2866eb950b000064
     name: "Aquarium Temperature"
+  - platform: wifi_signal
+    name: "Aquarium Sensors WiFi Signal Strength"
+  - platform: uptime
+    name: "Aquarium Sensors Uptime"
