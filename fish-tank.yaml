@@ -1,0 +1,29 @@
+esphome:
+  name: aquarium
+  platform: ESP8266
+  board: huzzah
+
+substitutions:
+  otapassword: ThisIsABadIdea
+  ssid: Foobar
+  networkkey: ThisIsAlsoABadIdea
+
+ota:
+  password: ${otapassword}
+
+api:
+
+wifi:
+  ssid: ${ssid}
+  password: ${networkkey}
+
+web_server:
+  port: 80
+
+dallas:
+  - pin: 13
+
+sensor:
+  - platform: dallas
+    address: 0x2866eb950b000064
+    name: "Aquarium Temperature"
