@@ -1,0 +1,39 @@
+esphome:
+  name: garage
+  platform: ESP8266
+  board: huzzah
+
+substitutions:
+  otapassword: ThisIsABadIdea
+  ssid: Foobar
+  networkkey: ThisIsAlsoABadIdea
+  prettyname: Garage
+
+<<: !include common.yaml
+
+debug:
+
+logger:
+  level: debug
+
+dallas:
+  - pin: 13
+
+sensor:
+  - platform: dallas
+    address: 0x1b01205d987a0428
+    name: "Mixing Station Water Temperature"
+  - platform: dallas
+    address: 0xe300000b209f1a28
+    name: "Chest Freezer Temperature"
+  - platform: dallas
+    address: 0x130316a279d15928
+    name: "Garage Temperature"
+  - platform: wifi_signal
+    name: "Garage Sensors WiFi Signal Strength"
+  - platform: uptime
+    name: "Garage Sensors Uptime"
+
+binary_sensor:
+  - platform: status
+    name: "Garage Sensors Status"
