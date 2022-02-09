@@ -20,10 +20,13 @@ dallas:
 
 sensor:
   - platform: dallas
-    index: 0
-    # address: 0x2866eb950b000064
+    address: 0x6400000b95eb6628
     name: "Aquarium Temperature"
   - platform: wifi_signal
     name: "Aquarium Sensors WiFi Signal Strength"
   - platform: uptime
     name: "Aquarium Sensors Uptime"
+
+binary_sensor:
+  - platform: status
+    name: "Aquarium Sensors Status"
