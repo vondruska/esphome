@@ -6,6 +6,7 @@ api:
 wifi:
   ssid: ${ssid}
   password: ${networkkey}
+  fast_connect: true
 
 web_server:
   port: 80
