@@ -11,6 +11,6 @@ Set these enviroment variables via `export` or GitPod project variables.
 
 
 ## Build firmware
-1. `esphome -s otapassword $OTA_PASSWORD -s networkkey $NETWORK_KEY -s ssid $SSID compile {yaml}`
+1. `./wrapper.sh compile {yaml}`
 1. Download `firmware.bin` from `.esphome/build/{esphome name}/.pioenvs/{esphome name}/firmware.bin`
 1. OTA upload `firmware.bin`
